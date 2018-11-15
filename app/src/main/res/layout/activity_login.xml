@@ -55,14 +55,23 @@
             android:background="@drawable/oval"/>
     </LinearLayout>
     <Button
-        android:id="@+id/Signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign up"
-        android:layout_marginTop="20dp"
-        android:gravity="left|center_vertical"
-        android:paddingLeft="50dp"
-        android:background="@drawable/backgroud_a1"/>
+    android:id="@+id/Signup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Sign up"
+    android:layout_marginTop="20dp"
+    android:gravity="left|center_vertical"
+    android:paddingLeft="50dp"
+    android:background="@drawable/backgroud_a1"/>
+    <!--<Button-->
+        <!--android:id="@+id/login_button"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Login with Facebook"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:gravity="left|center_vertical"-->
+        <!--android:paddingLeft="50dp"-->
+        <!--android:background="@drawable/backgroud_a1"/>-->
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
@@ -75,7 +84,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50dp"
-        android:text="XXX"
         android:id="@+id/tv2"/>
 
 </LinearLayout>
