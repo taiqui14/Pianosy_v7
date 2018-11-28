@@ -12,13 +12,15 @@
         android:layout_height="60dp"
         android:orientation="horizontal"
         android:background="@drawable/birday_gradient">
-        <ImageView
+
+        <ImageButton
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:src="@drawable/ic_arrow_back_black_24dp"
-            android:background="@drawable/oval"/>
+            android:background="@drawable/oval"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,120 +50,140 @@
         android:text="Upload profile picture"
         android:textColor="#000000"
         android:gravity="center"/>
+
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        >
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@drawable/bocong4goc"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="BIRTHDAY"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:text="BIRTHDAY" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input your birthday"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:hint="Input your birthday" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
             android:background="@drawable/bocong4goc2"
-            android:layout_marginTop="5dp"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="GENDER"
-                android:paddingLeft="10dp"/>
-            <EditText
-                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:text="GENDER" />
+            <!--<EditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Input your gender"-->
+            <!--android:gravity="right"/>-->
+            <CheckBox
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Input your gender"
-                android:gravity="right"/>
+                android:text="Male" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/bocong4goc"
             android:layout_marginTop="5dp"
-            >
+            android:background="@drawable/bocong4goc"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="GMAIL"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:text="GMAIL" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input your Gmail"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:hint="Input your Gmail" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/bocong4goc"
             android:layout_marginTop="5dp"
+            android:background="@drawable/bocong4goc"
+            android:orientation="horizontal"
 
             >
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="USERNAME"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:text="USERNAME" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:hint="Input your username"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:hint="Input your username" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/bocong4goc"
             android:layout_marginTop="5dp"
-            >
+            android:background="@drawable/bocong4goc"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="PASSWORD"
-                android:paddingLeft="10dp"/>
+                android:paddingLeft="10dp"
+                android:text="PASSWORD" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:inputType="textPassword"
+                android:gravity="right"
                 android:hint="Input your password"
-                android:gravity="right"/>
+                android:inputType="textPassword" />
         </LinearLayout>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Next"
-            android:textColor="#FFFFFF"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/bocong4goc3"
-            />
+            android:text="Next"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
+
 </LinearLayout>

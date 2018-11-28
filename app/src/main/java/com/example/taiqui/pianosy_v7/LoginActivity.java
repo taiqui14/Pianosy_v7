@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.facebook.internal.WebDialog;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -35,78 +37,21 @@ import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button btnSignup;
-    CallbackManager callbackManager;
-    LoginButton loginButton;
-    FirebaseAuth auth;
-    TextView t2;
+    ImageButton btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        btnSignup = (Button) findViewById(R.id.Signup);
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_create_account);
+        btn =(ImageButton)findViewById(R.id.btnImage);
+        btn.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+                Intent int_navi = new Intent(LoginActivity.this, Main3Activity.class);
+                startActivity(int_navi);
             }
         });
-        callbackManager = CallbackManager.Factory.create();
 
-        buttonclickloginFb();
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
-        loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList("email"));
-        t2 = (TextView) findViewById(R.id.tv2);
     }
 
-    public void buttonclickloginFb() {
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                handleFacebookToken(loginResult.getAccessToken());
-            }
 
-            @Override
-            public void onCancel() {
-                Toast.makeText(getApplicationContext(), "User cancelled it", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    private void handleFacebookToken(AccessToken accessToken) {
-        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            FirebaseUser myuser = auth.getCurrentUser();
-                            updateUI(myuser);
-                        }
-                        else{
-                            Toast.makeText(getApplicationContext(), "Could not register to Firebase", Toast.LENGTH_LONG).show();
-                        }
-
-                    }
-                });
-    }
-
-    @Override
-    protected void onActivityResult(int resquestCode, int resultCode, Intent data)
-    {
-        callbackManager.onActivityResult(resquestCode,resultCode, data);
-        super.onActivityResult(resquestCode,resultCode, data);
-    }
-
-    private void updateUI(FirebaseUser myuser) {
-        t2.setText(myuser.getEmail());
-    }
 
 }
